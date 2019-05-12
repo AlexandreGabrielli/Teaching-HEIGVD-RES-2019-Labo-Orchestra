@@ -1,0 +1,15 @@
+{
+  "name": "auditor",
+  "version": "1.0.0",
+  "description": "This file implement an auditor",
+  "main": "auditor.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
