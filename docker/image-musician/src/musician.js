@@ -1,16 +1,13 @@
 /**
- * tentative d'implementation client UDP version 0.1
+ * UDP client
  */
 
-let MULTICAST_ADDRESS = '239.255.36.36';
-let UDP_PORT = 9236
+var MULTICAST_ADDRESS = '239.255.36.36';
+var UDP_PORT = 8888
 
-import { createSocket } from "dgram";
-import uuid from "uuid/v4";
-let UUID = uuid();
-let process;
-let arg;
-let message;
+const dgram = require("dgram");
+var uuid = require("uuid/v4");
+var UUID = uuid();
 
 arg = process.argv[2];
 var instrument = new Map();
@@ -21,9 +18,9 @@ instrument.set("violin", "gzi-gzi");
 instrument.set("drum", "boum-boum");
 
 function send(){
-    let udp = createSocket("udp4");
+    var udp = dgram.createSocket("udp4");
     message = JSON.stringify({id : UUID, name : arg, sound : instrument.get(arg)})
-    udp.send(message,0,message.length,UDP_PORT,MULTICAST_ADDRESS,function(err){
+    udp.send(message,0,message.length,UDP_PORT,MULTICAST_ADDRESS,function(err,byte){
         if(err) throw err;
         udp.close;
     })

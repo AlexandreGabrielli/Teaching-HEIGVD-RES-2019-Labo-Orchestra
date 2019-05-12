@@ -2,4 +2,4 @@ FROM node:latest
 COPY src /opt/app/
 WORKDIR /opt/app/
 RUN npm install
-ENTRYPOINT [ "node","src\musician.js"]
+ENTRYPOINT [ "node","musician.js"]
