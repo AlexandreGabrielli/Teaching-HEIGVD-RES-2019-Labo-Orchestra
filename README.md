@@ -121,21 +121,21 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | In a JavaScript program, if we have an object, how can we **serialize it in JSON**? |
-| | *Enter your response here...*  |
+| | JSON.stringify(*objet json*) |
 |Question | What is **npm**?  |
-| | *Enter your response here...*  |
+| | gestionnaire de paquets js                                   |
 |Question | What is the `npm install` command and what is the purpose of the `--save` flag?  |
-| | *Enter your response here...*  |
+| | install install un pacquet et le --save l'ajoute au dependance (json) |
 |Question | How can we use the `https://www.npmjs.com/` web site?  |
-| | *Enter your response here...*  |
+| | pour trouver le bon packquet                                 |
 |Question | In JavaScript, how can we **generate a UUID** compliant with RFC4122? |
-| | *Enter your response here...*  |
+| | utiliser le GUID import (npm install --save (enregistre dans package.json) uuid ) |
 |Question | In Node.js, how can we execute a function on a **periodic** basis? |
-| | *Enter your response here...*  |
+| | avec setinterval(fonction,delais)                            |
 |Question | In Node.js, how can we **emit UDP datagrams**? |
-| | *Enter your response here...*  |
+| | grace a dgram.creatSocket et dgram.send() |
 |Question | In Node.js, how can we **access the command line arguments**? |
-| | *Enter your response here...*  |
+| | system.argv[pos] pos commence a 1 car 0 est la commande node |
 
 
 ## Task 3: package the "musician" app in a Docker image
@@ -143,17 +143,17 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | How do we **define and build our own Docker image**?|
-| | *Enter your response here...*  |
+| | avec docker build et un ficjier dockerfile                   |
 |Question | How can we use the `ENTRYPOINT` statement in our Dockerfile?  |
-| | *Enter your response here...*  |
+| | fichier d'entree "index.js" |
 |Question | After building our Docker image, how do we use it to **run containers**?  |
-| | *Enter your response here...*  |
+| | docker run 'tag image'                                       |
 |Question | How do we get the list of all **running containers**?  |
-| | *Enter your response here...*  |
+| | docker ps                                                    |
 |Question | How do we **stop/kill** one running container?  |
-| | *Enter your response here...*  |
+| | docker rm /stop                                              |
 |Question | How can we check that our running containers are effectively sending UDP datagrams?  |
-| | *Enter your response here...*  |
+| | tcpdump |
 
 
 ## Task 4: implement an "auditor" Node.js application
@@ -161,15 +161,15 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | ---  |
 |Question | With Node.js, how can we listen for UDP datagrams in a multicast group? |
-| | *Enter your response here...*  |
+| | grace a dgram createsocker("udp")                            |
 |Question | How can we use the `Map` built-in object introduced in ECMAScript 6 to implement a **dictionary**?  |
-| | *Enter your response here...* |
+| | utilisation d'une map |
 |Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting?  |
-| | *Enter your response here...* |
+| | npm install moment --save |
 |Question | When and how do we **get rid of inactive players**?  |
-| | *Enter your response here...* |
+| | tout les x temps on fait la différence entre la derniere requete du client et la temps actuel, s'il es trop grand on le remove |
 |Question | How do I implement a **simple TCP server** in Node.js?  |
-| | *Enter your response here...* |
+| | grace a net |
 
 
 ## Task 5: package the "auditor" app in a Docker image
