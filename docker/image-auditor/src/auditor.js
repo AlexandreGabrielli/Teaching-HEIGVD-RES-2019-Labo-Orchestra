@@ -10,15 +10,16 @@ var net = require('net');
 
 Musiciens = new Map();
 
-function Musicien(uuid,instrument,activeSince){
-    this.uuid = uuid;
-    this.instrument = instrument;
-    this.activeSince = activeSince;
+class Musicien {
+    constructor(uuid, instrument, activeSince) {
+        this.uuid = uuid;
+        this.instrument = instrument;
+        this.activeSince = activeSince;
+    }
 }
 
 /**
  * TCP server
- * source : https://gist.github.com/tedmiston/5935757
  */
 
 tcp_server = net.createServer(onClientConnected);
@@ -38,7 +39,6 @@ function onClientConnected(socket){
 
 /**
  * UDP server
- * source : https://www.hacksparrow.com/node-js-udp-server-and-client-example.html
  */
 
  upd_server.bind(UDP_PORT,function(){
