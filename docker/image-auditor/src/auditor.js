@@ -24,7 +24,6 @@ class Musicien {
 
 tcp_server = net.createServer(onClientConnected);
 tcp_server.listen(TCP_PORT, HOST);
-console.log('TCP servent listen on ' + HOST + ':' + TCP_PORT);
 
 function onClientConnected(socket){
     var musicienArray = []
@@ -42,17 +41,11 @@ function onClientConnected(socket){
  */
 
  upd_server.bind(UDP_PORT,function(){
-     console.log('A auditor join the group');
      upd_server.addMembership(MULTICAST_ADDRESS);
  });
 
- upd_server.on('listening',function(){
-     var address = upd_server.address();
-     console.log('UDP Server listening on ' + address.address + ":" + address.port);
- });
 
  upd_server.on('message',function(message,remote){
-     console.log(message.toString());
      var json = JSON.parse(message.toString());
      Musiciens.set(json.id,new Musicien(json.id,json.name,moment().format("YYYY-MM-DD HH:mm:ss")));
  })
@@ -65,7 +58,6 @@ function onClientConnected(socket){
          var diff = moment.duration(now.diff(rec)).as("seconds");
 
          if(diff > 5){
-             console.log("Musicien remove " + diff + "s");
              Musiciens.delete(key);
          }
      }
