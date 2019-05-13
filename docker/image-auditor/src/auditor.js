@@ -3,7 +3,7 @@ var MULTICAST_ADDRESS = '239.255.36.36';
 var UDP_PORT = 8888;
 var TCP_PORT = 2205;
 
-var dgram = require("dgram");
+const dgram = require("dgram");
 var moment = require("moment");
 var upd_server = dgram.createSocket("udp4");
 var net = require('net');
