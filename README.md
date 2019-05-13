@@ -177,7 +177,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | How do we validate that the whole system works, once we have built our Docker image? |
-| | *Enter your response here...* |
+| | En lancant le toutes avec plusieurs musiciens et en faisant une requete à l'adresse IP de la machine docker (192.168.99.100:2205) |
 
 
 ## Constraints
